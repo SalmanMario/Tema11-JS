@@ -1,1 +1,2 @@
-# Tema11-JS
+# Tema11-JS  
+# I HATE REGEX
