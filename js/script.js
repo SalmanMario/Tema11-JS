@@ -36,12 +36,22 @@ const additionalProps = {
     isAvailable: true
 };
 
-const obiectNou = { props, additionalProps };
+const obiectNou = { ...props, ...additionalProps };
 console.log(obiectNou);
 
 // exercitiul 5
-const buletin = "4010906350879";
+const buletin = "5010609357778";
 
+const buletinRegex = /^[1-8][0-9]{2}(0[1-9]|1[0-2])([0-9][0-9])(0[1-9]|[1-4][0-9]|5[0-2])([0-9]{3})([0-9])$/gi;
+
+const testString = "5010609357778";
+if (buletinRegex.test(testString)) {
+    console.log(`Stringul ${testString} este conform sablonului/expresiei regulate`);
+} else {
+    console.log(`Stringul ${testString} nu este conform sablonului/expresiei regulate`);
+}
+
+// extra de la mine 
 function cnpInfo(buletin) {
     const gender = buletin.substring(0, 1);
     const an = buletin.substring(1, 3);
