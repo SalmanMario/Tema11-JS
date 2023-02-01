@@ -55,17 +55,24 @@ function cnpInfo(buletin) {
 
 cnpInfo(buletin);
 
-// exercitiul 1 extra NU STIU CUM SA ADAUG PARAMETRU CA STRING,AM CAUTAT DAR N-AM GASIT NIMIC
+// exercitiul 1 extra
 
-function multiply(...args) {
-    let total = 1;
-    for (const a of args) {
-        total *= a;
+function multiply(string, ...args) {
+    if (string === "Inmultire") {
+        return args.reduce((prevValue, currentValue) => prevValue * currentValue, 1);
+    } else if (string === "Adunare") {
+        return args.reduce((prevValue, currentValue) => prevValue + currentValue, 0);
+    } else if (string === "Scadere") {
+        return args.reduce((prevValue, currentValue) => prevValue - currentValue);
+    } else if (string === "Impartire") {
+        return args.reduce((prevValue, currentValue) => prevValue / currentValue);
     }
-    return total;
 }
 
-console.log(multiply(2, 2, 4));
+console.log(multiply("Inmultire", 2, 2, 4));
+console.log(multiply("Adunare", 1, 4, 7, 8));
+console.log(multiply("Scadere", 8, 2, 4, 4));
+console.log(multiply("Impartire", 8, 2, 4));
 
 
 // exercitiul 2 extra
